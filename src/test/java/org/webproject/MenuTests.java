@@ -1,7 +1,6 @@
 package org.webproject;
 
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.FileDownloadMode;
 import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.*;
 
@@ -14,10 +13,8 @@ public class MenuTests {
     @BeforeAll
     public static void configurationBrowser() {
         Configuration.browserSize = "1366x768";
-        Configuration.headless = false;
+        Configuration.headless = true;
         Configuration.timeout = 10000;
-        //Configuration.proxyEnabled = true;
-        //Configuration.fileDownload = FileDownloadMode.PROXY;
     }
 
     @BeforeEach

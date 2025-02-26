@@ -9,7 +9,6 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
 public class MenuElements {
-    private final SelenideElement disabledMenuButton = $(By.id("ui-id-1"));
     private final SelenideElement enabledMenuButton = $(By.id("ui-id-3"));
     private final SelenideElement downloadsButton = $(By.id("ui-id-4"));
     private final SelenideElement backButton = $(By.id("ui-id-8"));

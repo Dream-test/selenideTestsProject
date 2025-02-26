@@ -9,8 +9,8 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
 public class JQueryUIPage {
-    private SelenideElement pageTitle = $(Selectors.byTagAndText("h3", "JQuery UI"));
-    private SelenideElement menuButton = $(Selectors.byTagAndText("a", "Menu"));
+    private final SelenideElement pageTitle = $(Selectors.byTagAndText("h3", "JQuery UI"));
+    private final SelenideElement menuButton = $(Selectors.byTagAndText("a", "Menu"));
 
     public void JQueryUIPageLoaded() {
         pageTitle.shouldHave(Condition.text("JQuery UI")).shouldBe(visible);

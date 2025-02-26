@@ -7,10 +7,10 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
 public class MenuPage {
-    private SelenideElement pageTitle = $(Selectors.byTagAndText("h3", "JQueryUI - Menu"));
-    private SelenideElement disabledMenuButton = $(By.id("ui-id-1"));
-    private SelenideElement enabledMenuButton = $(By.id("ui-id-3"));
-    private SelenideElement queryMenu = $(By.id("menu"));
+    private final SelenideElement pageTitle = $(Selectors.byTagAndText("h3", "JQueryUI - Menu"));
+    private final SelenideElement disabledMenuButton = $(By.id("ui-id-1"));
+    private final SelenideElement enabledMenuButton = $(By.id("ui-id-3"));
+    private final SelenideElement queryMenu = $(By.id("menu"));
 
     public void queryMenuPageLoaded() {
         pageTitle.shouldBe(visible).shouldHave(Condition.text("JQueryUI - Menu"));
@@ -24,9 +24,5 @@ public class MenuPage {
 
     public void ifEnabledButtonExist() {
         enabledMenuButton.$("a").shouldHave(Condition.text("Enabled")).shouldBe(visible);
-    }
-
-    public SelenideElement getPageTitle() {
-        return pageTitle;
     }
 }
