@@ -16,7 +16,7 @@ public class DownloadTests {
     @BeforeAll
     public static void configurationBrowser() {
         Configuration.browserSize = "1366x768";
-        Configuration.headless = false;
+        Configuration.headless = true;
         Configuration.timeout = 10000;
         Configuration.proxyEnabled = true;
         Configuration.fileDownload = FileDownloadMode.PROXY;
