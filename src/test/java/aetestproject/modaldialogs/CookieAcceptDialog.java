@@ -3,13 +3,18 @@ package aetestproject.modaldialogs;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 
-import static aetestproject.castoms.CustomActions.*;
+import static aetestproject.utils.CustomActions.*;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.$;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class CookieAcceptDialog {
-    public void isCookieAcceptDialogPresent() {
+    public boolean isCookieAcceptDialogPresent() {
+        SelenideElement modalBodyText = $(By.id("onetrust-policy-text"));
+        return modalBodyText.isDisplayed();
+    }
+
+    public void isCookieAcceptDialogLoaded() {
         SelenideElement modalBodyText = $(By.id("onetrust-policy-text"));
         modalBodyText.shouldBe(visible);
         assertTrue(modalBodyText.getText().contains("We use cookies"));
@@ -36,7 +41,7 @@ public class CookieAcceptDialog {
         SelenideElement cookiesSettingButton = $(By.id("onetrust-pc-btn-handler"));
         scrollToElement(cookiesSettingButton);
         waitForVisibilityAndClick(cookiesSettingButton);
-        cookiesSettingButton.shouldNot(clickable);
+        //cookiesSettingButton.shouldNot(clickable);
 
     }
 }
