@@ -1,17 +1,12 @@
 package uploadtestproject;
 
-import aetestproject.modaldialogs.CookieAcceptDialog;
-import aetestproject.modaldialogs.CookieSettingsDialog;
-import ch.qos.logback.core.joran.conditional.Condition;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selectors;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.*;
-import org.assertj.core.api.Assertions;
 import org.openqa.selenium.By;
-import org.openqa.selenium.devtools.v131.fetch.model.AuthChallengeResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -72,7 +67,7 @@ public class UploadTests {
         //Get URL for file resource
         URL url = UploadTests.class.getClassLoader().getResource("text.txt");
 
-        String absolutePath = null;
+        String absolutePath;
         if (url != null) {
             //Get absolute path for the file
             absolutePath = new File(url.getPath()).getAbsolutePath();

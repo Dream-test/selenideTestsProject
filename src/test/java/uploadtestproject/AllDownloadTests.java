@@ -14,7 +14,6 @@ import java.io.File;
 
 import static com.codeborne.selenide.Selenide.*;
 import static io.restassured.RestAssured.given;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static uploadtestproject.utils.PdfUtils.savePdf;
 
 public class AllDownloadTests {
